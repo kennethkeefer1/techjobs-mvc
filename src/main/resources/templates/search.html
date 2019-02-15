@@ -37,6 +37,21 @@
     <hr />
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
+    <div class="listOfJobs" th:each="job : ${jobResults}">
+        <div class="singleJob">
+            <p class="row" th:each="key : ${job.keySet()}">
+                <span th:text="${key} + ': ' + ${job.get(key)}"></span>
+            </p>
+            <hr />
+        </div>
+
+        <!-- This just looked ugly to me, so I played with it above.
+        <table class="listOfJobs" th:each="job : ${jobResults}">
+            <tr class="row" th:each="key : ${job.keySet()}">
+                <td th:text="${key} + ': ' + ${job.get(key)}"></td>
+            </tr>
+        </table>-->
+    </div>
 
 </div>
 
